@@ -6,11 +6,14 @@ import {
   ADD_TECH,
 } from "./type";
 
+import {JSON_API} from "../Constant/constant";
+
 export const getTechs = () => {
+  console.log(JSON_API)
   return async (dispatch) => {
     try {
       setLoading();
-      const res = await fetch("/techs");
+      const res = await fetch(`${JSON_API}/techs`);
       const data = await res.json();
 
       dispatch({
@@ -30,7 +33,7 @@ export const deleteTechs = (id) => {
   return async (dispatch) => {
     try {
       setLoading();
-      await fetch(`/techs/${id}`, {
+      await fetch(`${JSON_API}/techs/${id}`, {
         method: "DELETE",
       });
 
@@ -51,7 +54,7 @@ export const addTechs = (tech) => {
   return async (dispatch) => {
     try {
       setLoading();
-      const res = await fetch("/techs", {
+      const res = await fetch(`${JSON_API}/techs`, {
         method: "POST",
         body: JSON.stringify(tech),
         headers: {
