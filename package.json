@@ -20,7 +20,7 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
     "client": "react-scripts start",
     "json-server": "node server.js",
     "dev": "concurrently \"npm start \" \"npm run json-server\"",

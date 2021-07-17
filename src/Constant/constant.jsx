@@ -1,1 +1,1 @@
-export const JSON_API = 'http://localhost:8000';
+export const JSON_API = 'https://it-logger-react-json.herokuapp.com/api';
